@@ -35,6 +35,8 @@ summary(ModelLog2Step)
 x <- tongjidiaocha[,-c(15:18)]
 covariances <- cov(x)
 correlations <- cov2cor(covariances)
+KMO(x)
+cortest.bartlett(x)
 fa.parallel(correlations, fa="both", n.iter=100)
 
 fa1 <- fa(correlations, nfactors=2, rotate="varimax", fm="pa");fa1
